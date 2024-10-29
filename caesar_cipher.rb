@@ -14,11 +14,15 @@ def caesar_cipher(string, key)
   encoded_string = ''
   original_string_array.each do |char|
     original_key = alphabet_keyed.key(char)
-     char
-     encoded_key = original_key.to_i + key
-      # if encoded_key > 26
-      #   then encoded_key_looped = encoded_key - 26
-      # end
+     p char
+     p encoded_key = original_key.to_i + key
+    #   unless encoded_key >= 26
+    #     p encoded_key_looped = encoded_key - 26
+    #     new_letter_looped = alphabet_keyed[encoded_key_looped]
+    #     encoded_string_array.push(new_letter_looped)
+    #     encoded_string_array
+    #     encoded_string = encoded_string_array.join('')
+    #   end
      new_letter = alphabet_keyed[encoded_key]
      encoded_string_array.push(new_letter)
      encoded_string_array
