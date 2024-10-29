@@ -1,11 +1,7 @@
+require 'pry-byebug'
 # Make an hash of alphabet a-z
 # Add keys 1-26 for each letter of the alphabet
 
-
-
-:alphabet_plain = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'
-'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't'
-'u', 'v', 'w', 'x', 'y', 'z'}
 
 def caesar_cipher(string, key)
   alphabet_keyed = { 1 => 'a', 2 => 'b', 3 => 'c', 4 => 'd', 5 => 'e', 6 => 'f', 
@@ -15,21 +11,21 @@ def caesar_cipher(string, key)
     25 => 'y', 26 => 'z' }
   original_string_array = string.downcase.chars
   encoded_string_array = []
+  encoded_string = ''
   original_string_array.each do |char|
     original_key = alphabet_keyed.key(char)
      char
-     p encoded_key = original_key.to_i + key
+     encoded_key = original_key.to_i + key
       # if encoded_key > 26
       #   then encoded_key_looped = encoded_key - 26
       # end
-    p new_letter = :alphabet_keyed[encoded_key]
-    p encoded_string_array.push(new_letter)
-    p encoded_string_array
-    p encoded_string = encoded_string_array.join(',')
+     new_letter = alphabet_keyed[encoded_key]
+     encoded_string_array.push(new_letter)
+     encoded_string_array
+     encoded_string = encoded_string_array.join('')
   end
-  p encoded_string
+  return encoded_string
 end
-
 # Write logic for cipher
   # Takes string and converts it to an array using #chars
   # Declare an empty variable to hold the modified array
